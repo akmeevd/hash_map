@@ -20,11 +20,12 @@ public class Dz {
         List<Integer> a = new ArrayList<>();
         Integer sum = 0;
         for (Map.Entry<String, List<Integer>> map : map.entrySet()) {
-            for (int i = 0; i < map.getValue().size(); i++) {
-                sum = sum + map.getValue().get(i);
+            var value = map.getValue();
+            for (int i = 0; i < value.size(); i++) {
+                sum = sum + value.get(i);
             }
-            map.getValue().removeAll(map.getValue());
-            map.getValue().add(sum);
+            value.removeAll(value);
+            value.add(sum);
             sum = 0;
         }
     }
