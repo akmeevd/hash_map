@@ -5,6 +5,7 @@ public class Dz {
 
     private static Map<String, List<Integer>> map = new HashMap<>();
 
+
     public static void addInMap(String string) {
         Random random = new Random();
         List<Integer> integers = new ArrayList<>();
@@ -16,18 +17,18 @@ public class Dz {
 
     }
 
-    public static void changeValue() {
-        List<Integer> a = new ArrayList<>();
+    public static Map<String, Integer> changeValue() {
+        Map<String, Integer> map1 = new HashMap<>();
         Integer sum = 0;
         for (Map.Entry<String, List<Integer>> map : map.entrySet()) {
             var value = map.getValue();
             for (int i = 0; i < value.size(); i++) {
                 sum = sum + value.get(i);
             }
-            value.removeAll(value);
-            value.add(sum);
+            map1.put(map.getKey(), sum);
             sum = 0;
         }
+        return map1;
     }
 
     public String toString() {
@@ -43,8 +44,10 @@ public class Dz {
         addInMap("some4");
         addInMap("some5");
         System.out.println(map);
-        changeValue();
-        System.out.println(map);
+        Map<String, Integer> map1 = changeValue();
+        System.out.println(map1);
+
+
 
 
     }
