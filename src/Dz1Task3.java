@@ -4,11 +4,7 @@ public class Dz1Task3 {
     public static void addStr(String string, Integer integer) {
         if (str.containsKey(string) && str.containsValue(integer)) {
             throw new RuntimeException("Такие ключ и значение уже есть");
-        }
-        if (!str.containsKey(string)) {
-            str.put(string, integer);
-        }
-        if (str.containsKey(string) && !str.containsValue(integer)) {
+        } else {
             str.put(string, integer);
         }
     }
